@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Berkas Mahasiswa - PANDU MAJID NUGROHO</title>
+<style>
+  body {
+    margin: 0;
+    padding: 30px 12px;
+    background: #2f4a44;
+    font-family: "Courier New", Courier, monospace;
+    color: #1d1d1d;
+  }
+  .kertas {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    background: #fbfaf5;
+    padding: 36px 32px 40px;
+    border-radius: 3px;
+    box-shadow: 0 6px 0 #22372f;
+  }
+  .stempel {
+    position: absolute;
+    top: 28px;
+    right: 24px;
+    transform: rotate(12deg);
+    border: 3px solid #b3261e;
+    color: #b3261e;
+    padding: 4px 10px;
+    font-weight: bold;
+    font-size: 18px;
+    opacity: .85;
+  }
+  h1 { margin: 0 0 4px; font-size: 26px; }
+  .no-berkas { margin: 0 0 24px; color: #666; font-size: 14px; }
+  .atas { display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; }
+  .atas img {
+    width: 170px;
+    border: 8px solid #fff;
+    outline: 1px solid #bbb;
+    transform: rotate(-3deg);
+  }
+  .data p { margin: 4px 0; }
+  h2 { font-size: 18px; border-bottom: 2px dashed #888; padding-bottom: 4px; margin-top: 32px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { border: 1px solid #777; padding: 7px 9px; text-align: left; }
+  th { background: #e6e2d3; }
+  .sensor {
+    background: #111;
+    color: #111;
+    padding: 0 6px;
+    user-select: none;
+  }
+  .terbuka .sensor { background: transparent; color: #1d1d1d; user-select: auto; }
+  button {
+    font-family: inherit;
+    font-size: 15px;
+    padding: 9px 16px;
+    background: #b3261e;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    margin-top: 12px;
+  }
+  button:hover { background: #8e1d17; }
+  a { color: #1a4fa0; }
+  footer { margin-top: 30px; font-size: 13px; color: #666; }
+</style>
+</head>
+<body>
+<div class="kertas" id="berkas">
+  <div class="stempel" id="stempel">RAHASIA</div>
+
+  <h1>Berkas Mahasiswa</h1>
+  <p class="no-berkas">No. berkas: RKS-1-2026 (Politeknik Negeri Cilacap)</p>
+
+  <div class="atas">
+    <img src="PasFotoPandu (4 x 6 cm).jpg" alt="Foto NAMA ANDA">
+    <div class="data">
+      <p><b>Nama</b> : PANDU MAJID NUGROHO</p>
+      <p><b>NIM</b> : 260109021</p>
+      <p><b>Program Studi</b> : Rekayasa Keamanan Siber</p>
+      <p><b>Kelas</b> : RKS 1C</p>
+    </div>
+  </div>
+
+  <h2>Catatan Perkenalan</h2>
+  <p>
+    Halo, saya mahasiswa semester 1 Rekayasa Keamanan Siber di Politeknik Negeri Cilacap.
+    Saya tertarik pada dunia keamanan digital karena data pribadi seharusnya aman dan tidak mudah bocor.
+    Halaman ini adalah tugas praktikum pertama saya, dibuat dengan Notepad dan dipublikasikan ke internet.
+    Berkas ini sengaja disensor sebagian, karena di bidang siber tidak semua informasi boleh terbuka.
+  </p>
+
+  <h2>Riwayat dan Keahlian</h2>
+  <table>
+    <tr><th>Jenis</th><th>Keterangan</th><th>Tahun</th></tr>
+    <tr><td>Pendidikan</td><td>SMA/SMK ISI SMAN 15 KAB TANGEARANG</td><td>2023 - 2026</td></tr>
+    <tr><td>Pendidikan</td><td>Politeknik Negeri Cilacap</td><td>2026 - sekarang</td></tr>
+    <tr><td>Minat</td><td>Keamanan jaringan dan keamanan data</td><td>2026</td></tr>
+  </table>
+
+  <h2>Informasi Sensor</h2>
+  <p>Hobi : <span class="sensor">Bermain Bulu Tangkis</span></p>
+  <p>Makanan favorit : <span class="sensor">Ketoprak</span></p>
+  <p>Cita-cita : <span class="sensor">menjadi analis keamanan siber</span></p>
+  <button id="tombol" onclick="bukaBerkas()">Buka sensor berkas</button>
+
+  <h2>Tautan</h2>
+  <p>Situs kampus: <a href="https://www.pnc.ac.id" target="_blank">www.pnc.ac.id</a></p>
+
+  <footer>Dibuat untuk UTS PTIL Praktikum.</footer>
+</div>
+
+<script>
+  function bukaBerkas() {
+    var berkas = document.getElementById("berkas");
+    var stempel = document.getElementById("stempel");
+    var tombol = document.getElementById("tombol");
+    berkas.classList.toggle("terbuka");
+    if (berkas.classList.contains("terbuka")) {
+      stempel.textContent = "TERBUKA";
+      tombol.textContent = "Sensor kembali";
+    } else {
+      stempel.textContent = "RAHASIA";
+      tombol.textContent = "Buka sensor berkas";
+    }
+  }
+</script>
+</body>
+</html>
